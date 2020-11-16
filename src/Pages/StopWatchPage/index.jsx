@@ -1,6 +1,8 @@
+import Stopwatch from "../../Components/StopWatch"
+
 const StopwatchPage = () => {
   return (
-    <div>stopwatch</div>
+    <Stopwatch />
   )
 }
 
