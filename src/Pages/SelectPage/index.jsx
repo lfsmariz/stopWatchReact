@@ -1,7 +1,15 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import SampleComponent from '../../Components/SampleComponent';
+
 const SelectPage = () => {
   return (
-    <h1>oláaa</h1>
-  )
-}
+    <>
+      <Link to="/stopwatch">Stopwatch</Link>
+      <Link to="/countdown">CountDown</Link>
+      <SampleComponent />
+    </>
+  );
+};
 
-export default SelectPage
+export default SelectPage;
