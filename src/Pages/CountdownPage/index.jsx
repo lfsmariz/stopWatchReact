@@ -1,6 +1,8 @@
+import Countdown from "../../Components/Countdown"
+
 const CountdownPage = () => {
   return (
-    <div>countdown</div>
+    <Countdown />
   )
 }
 
