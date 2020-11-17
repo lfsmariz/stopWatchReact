@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom';
+// import { useHistory } from 'react-router'
 
 const Stopwatch = () => {
 
@@ -29,17 +30,17 @@ const Stopwatch = () => {
 
   const convertTime = (count) => {
 
-    const constConvert = {hour: 3600000, minute: 60000, second: 1000}
+    const constConvert = { hour: 3600000, minute: 60000, second: 1000 }
 
-    const timeCon = {hour: 0, minute: 0, second: 0, milisecond: 0}
+    const timeCon = { hour: 0, minute: 0, second: 0, milisecond: 0 }
 
     timeCon.hour = Math.floor(count / constConvert.hour);
     timeCon.minute = Math.floor((count - timeCon.hour * constConvert.hour) / constConvert.minute);
     timeCon.second = Math.floor((count - timeCon.hour * constConvert.hour - timeCon.minute * constConvert.minute) / constConvert.second);
     timeCon.milisecond = Math.floor(count - timeCon.hour * constConvert.hour - timeCon.minute * constConvert.minute - timeCon.second * constConvert.second);
     return timeCon;
-  } 
-  
+  }
+
   return (
     <div>
       <h1>{convertTime(count).hour}</h1>
