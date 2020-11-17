@@ -5,7 +5,7 @@
   justify-content: space-between;
 }
 
-.timer {
+.timerStopWatch {
   padding-top: 40px;
   margin-top: 130px;
   width: 234px;
@@ -18,14 +18,14 @@
   margin-bottom: 30px;
 }
 
-.timer h1 {
+.timerStopWatch h1 {
   display: inline;
   font-family: "Share Tech Mono", monospace;
   color: #8289a9;
   font-size: 56px;
   font-weight: 400;
 }
-.timer p {
+.timerStopWatch p {
   display: inline;
   font-family: "Share Tech Mono", monospace;
   color: #8289a9;

@@ -30,6 +30,7 @@ button:hover {
   background: #ffffff;
   box-shadow: 3px 3px 10px #00000010;
   border-radius: 15px;
+  position: relative;
 }
 
 .monitor::after {
@@ -47,4 +48,20 @@ button:hover {
   width: 100vw;
   height: 100vh;
   background: #edeef0;
+}
+
+.voltar {
+  position: absolute;
+  right: 0;
+  background: #a8adc6;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 0 5px 0 5px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.voltar:hover {
+  background: #8289a9;
 }

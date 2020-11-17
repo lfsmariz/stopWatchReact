@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import Voltar from '../Voltar'
-
 import Screen from '../../Components/Screen'
 import './style.css'
 
@@ -34,11 +34,10 @@ const Stopwatch = () => {
   return (
     <Screen>
       <Voltar />
-      <div className="SelectStopWatch">
-        <div className="timerStopWatch">
+      <div className="SelectCountDown">
+        <div className="timerCountDown">
           <div>
             {convertTime(count).hour > 0 && <h1>{convertTime(count).hour}:</h1>}
-
             <h1>{convertTime(count).minute < 10
               ? '0' + convertTime(count).minute + ":"
               : convertTime(count).minute + ":"}</h1>
@@ -47,7 +46,6 @@ const Stopwatch = () => {
               ? '0' + convertTime(count).second
               : convertTime(count).second}</h1>
           </div>
-
           <p>{convertTime(count).milisecond === 0
             ? '000'
             : convertTime(count).milisecond < 100
@@ -55,11 +53,17 @@ const Stopwatch = () => {
               : convertTime(count).milisecond}
           </p>
         </div>
+
+        <div className="inputTime">
+          <input maxlength="2" type="text" /><h1>:</h1>
+          <input maxlength="2" type="text" />
+        </div>
         <div>
           <button onClick={() => setStatus(true)}>Iniciar</button>
           <button onClick={() => setStatus(false)}>Parar</button>
         </div>
       </div>
+      <Link to="/">Voltar</Link>
     </Screen>
   )
 }
