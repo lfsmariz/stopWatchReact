@@ -17,6 +17,7 @@ button {
   text-decoration: none;
   font-size: 24px;
   border: none;
+  color: white;
 }
 button:hover {
   background-color: #8289a9;

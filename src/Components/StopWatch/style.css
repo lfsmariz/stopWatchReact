@@ -1,0 +1,41 @@
+.SelectStopWatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timer {
+  padding-top: 40px;
+  margin-top: 130px;
+  width: 234px;
+  height: 221px;
+  background: url("../../img/stopwatch.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.timer h1 {
+  display: inline;
+  font-family: "Share Tech Mono", monospace;
+  color: #8289a9;
+  font-size: 56px;
+  font-weight: 400;
+}
+.timer p {
+  display: inline;
+  font-family: "Share Tech Mono", monospace;
+  color: #8289a9;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.SelectStopWatch div:last-child {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
