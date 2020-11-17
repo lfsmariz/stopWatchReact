@@ -6,16 +6,29 @@ import './style.css'
 
 const Stopwatch = () => {
 
-  const initialState = 0
-
-  const [count, setCount] = useState(initialState);
-  const [status, setStatus] = useState(false);
-
+  const [shouldStart, setShouldStart] = useState(false);
+  const [count, setCount] = useState(0);
+  const [intervalID, setIntervalID] = useState(0);
+  const [notRunning, setNotRunning] = useState(true);
   useEffect(() => {
-    if (status) {
-      setTimeout(() => setCount(count + 10), 10)
+    if (shouldStart) {
+      setIntervalID(setInterval(() => setCount(count => count + 10), 10));
+      setShouldStart(false);
+      setNotRunning(false);
     }
-  }, [status, count])
+  }, [shouldStart, intervalID]);
+  const startCount = () => notRunning && setShouldStart(true);
+
+  const pauseCount = () => {
+    clearInterval(intervalID);
+    setNotRunning(true);
+  };
+
+  const stopCount = () => {
+    clearInterval(intervalID);
+    setCount(0);
+    setNotRunning(true);
+  };
 
   const convertTime = (count) => {
 
@@ -27,7 +40,6 @@ const Stopwatch = () => {
     timeCon.minute = Math.floor((count - timeCon.hour * constConvert.hour) / constConvert.minute);
     timeCon.second = Math.floor((count - timeCon.hour * constConvert.hour - timeCon.minute * constConvert.minute) / constConvert.second);
     timeCon.milisecond = Math.floor(count - timeCon.hour * constConvert.hour - timeCon.minute * constConvert.minute - timeCon.second * constConvert.second);
-
     return timeCon;
   }
 
@@ -56,8 +68,22 @@ const Stopwatch = () => {
           </p>
         </div>
         <div>
-          <button onClick={() => setStatus(true)}>Iniciar</button>
-          <button onClick={() => setStatus(false)}>Parar</button>
+
+          {notRunning
+            ? <button className="btnfix" onClick={startCount}>iniciar</button>
+            : <button className="btnfix" onClick={pauseCount}>pausar</button>}
+
+
+
+
+
+
+
+
+
+          <button onClick={stopCount}>
+            resetar
+      </button>
         </div>
       </div>
     </Screen>

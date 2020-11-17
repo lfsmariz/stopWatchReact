@@ -35,7 +35,12 @@
 }
 
 .SelectStopWatch div:last-child {
-  width: 65%;
+  width: 75%;
   display: flex;
   justify-content: space-between;
+}
+
+.btnfix {
+  text-align: center;
+  width: 120px;
 }

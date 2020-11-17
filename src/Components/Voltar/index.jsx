@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const Voltar = () => {
-    return (<div className="voltar"><Link to="/">voltar</Link></div>)
+    return (<Link className="voltar" to="/">voltar</Link>)
 }
 
 export default Voltar
