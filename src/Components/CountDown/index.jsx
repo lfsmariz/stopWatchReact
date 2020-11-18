@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Voltar from '../Voltar'
 import "./style.css"
 import Screen from '../../Components/Screen'
+import TitleTime from "../TitleTime"
+
 
 
 const Countdown = () => {
@@ -28,29 +30,17 @@ const Countdown = () => {
   }, [status, count, inputControl, pause]);
 
   const convertTime = (count) => {
-    const constConvert = { hour: 3600000, minute: 60000, second: 1000 };
 
-    const timeCon = { hour: 0, minute: 0, second: 0, milisecond: 0 };
+    const constConvert = { hour: 3600000, minute: 60000, second: 1000 }
+
+    const timeCon = { hour: 0, minute: 0, second: 0, milisecond: 0 }
 
     timeCon.hour = Math.floor(count / constConvert.hour);
-    timeCon.minute = Math.floor(
-      (count - timeCon.hour * constConvert.hour) / constConvert.minute
-    );
-    timeCon.second = Math.floor(
-      (count -
-        timeCon.hour * constConvert.hour -
-        timeCon.minute * constConvert.minute) /
-      constConvert.second
-    );
-    timeCon.milisecond = Math.floor(
-      count -
-      timeCon.hour * constConvert.hour -
-      timeCon.minute * constConvert.minute -
-      timeCon.second * constConvert.second
-    );
-
+    timeCon.minute = Math.floor((count - timeCon.hour * constConvert.hour) / constConvert.minute);
+    timeCon.second = Math.floor((count - timeCon.hour * constConvert.hour - timeCon.minute * constConvert.minute) / constConvert.second);
+    timeCon.milisecond = Math.floor(count - timeCon.hour * constConvert.hour - timeCon.minute * constConvert.minute - timeCon.second * constConvert.second);
     return timeCon;
-  };
+  }
 
   const handleTime = ({ target }) => {
     const { name, value } = target;
@@ -59,6 +49,7 @@ const Countdown = () => {
 
   return (
     <Screen>
+      <TitleTime count={count} convertTime={convertTime} />
       <Voltar />
       <div className="SelectCountDown">
         <div className="timerCountDown">
@@ -86,6 +77,7 @@ const Countdown = () => {
             ? <h1 className="tooltip">contando...</h1>
             : <>
               <input
+                value={inputControl.hour}
                 type="text"
                 placeholder="H"
                 name="hour"
@@ -93,6 +85,7 @@ const Countdown = () => {
                 onChange={handleTime}
               />
               <input
+                value={inputControl.minute}
                 type="text"
                 placeholder="M"
                 name="minute"
@@ -100,6 +93,7 @@ const Countdown = () => {
                 onChange={handleTime}
               />
               <input
+                value={inputControl.second}
                 type="text"
                 placeholder="S"
                 name="second"

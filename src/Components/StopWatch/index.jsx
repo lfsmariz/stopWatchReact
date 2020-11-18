@@ -3,6 +3,7 @@ import Voltar from '../Voltar'
 
 import Screen from '../../Components/Screen'
 import './style.css'
+import TitleTime from "../TitleTime"
 
 const Stopwatch = () => {
 
@@ -45,6 +46,7 @@ const Stopwatch = () => {
 
   return (
     <Screen>
+      <TitleTime count={count} convertTime={convertTime} />
       <Voltar />
       <div className="SelectStopWatch">
         <div className="timerStopWatch">
