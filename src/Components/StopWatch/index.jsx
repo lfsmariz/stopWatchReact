@@ -1,6 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import { Link } from 'react-router-dom';
-// import { useHistory } from 'react-router'
+import React, { useState, useEffect } from 'react'
+import Voltar from '../Voltar'
+
+import Screen from '../../Components/Screen'
+import './style.css'
+import TitleTime from "../TitleTime"
 
 const Stopwatch = () => {
 
@@ -42,22 +45,41 @@ const Stopwatch = () => {
   }
 
   return (
-    <div>
-      <h1>{convertTime(count).hour}</h1>
-      <h1>{convertTime(count).minute}</h1>
-      <h1>{convertTime(count).second}</h1>
-      <p>{convertTime(count).milisecond}</p>
-      <button onClick={startCount}>
-        iniciar
+    <Screen>
+      <TitleTime count={count} convertTime={convertTime} />
+      <Voltar />
+      <div className="SelectStopWatch">
+        <div className="timerStopWatch">
+          <div>
+            {convertTime(count).hour > 0 && <h1>{convertTime(count).hour}:</h1>}
+
+            <h1>{convertTime(count).minute < 10
+              ? '0' + convertTime(count).minute + ":"
+              : convertTime(count).minute + ":"}</h1>
+
+            <h1>{convertTime(count).second < 10
+              ? '0' + convertTime(count).second
+              : convertTime(count).second}</h1>
+          </div>
+
+          <p>{convertTime(count).milisecond === 0
+            ? '000'
+            : convertTime(count).milisecond < 100
+              ? '0' + convertTime(count).milisecond
+              : convertTime(count).milisecond}
+          </p>
+        </div>
+        <div>
+
+          {notRunning
+            ? <button className="btnfix" onClick={startCount}>iniciar</button>
+            : <button className="btnfix" onClick={pauseCount}>pausar</button>}
+          <button onClick={stopCount}>
+            resetar
       </button>
-      <button onClick={pauseCount}>
-        pausar
-      </button>
-      <button onClick={stopCount}>
-        resetar
-      </button>
-      <Link to="/">Voltar</Link>
-    </div>
+        </div>
+      </div>
+    </Screen>
   )
 }
 

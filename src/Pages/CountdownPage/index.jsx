@@ -1,8 +1,8 @@
-import Countdown from "../../Components/Countdown"
+import CountDown from '../../Components/CountDown'
 
 const CountdownPage = () => {
   return (
-    <Countdown />
+    <div><CountDown /></div>
   )
 }
 
