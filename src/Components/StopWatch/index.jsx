@@ -72,15 +72,6 @@ const Stopwatch = () => {
           {notRunning
             ? <button className="btnfix" onClick={startCount}>iniciar</button>
             : <button className="btnfix" onClick={pauseCount}>pausar</button>}
-
-
-
-
-
-
-
-
-
           <button onClick={stopCount}>
             resetar
       </button>

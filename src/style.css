@@ -35,7 +35,7 @@ button:hover {
 
 .monitor::after {
   margin-top: 15px;
-  content: "Created by Dan & Luiz";
+  content: "Created by Dan, Hercules & Luiz";
   font-family: "Share Tech Mono", monospace;
   color: #8289a9;
   font-weight: 800;
