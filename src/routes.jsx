@@ -5,7 +5,7 @@ import SelectPage from './Pages/SelectPage'
 import StopwatchPage from './Pages/StopWatchPage';
 
 const Routes = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Switch>
       <Route exact path="/" component={SelectPage} />
       <Route path="/stopwatch" component={StopwatchPage} />
