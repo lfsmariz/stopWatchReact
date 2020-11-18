@@ -1,0 +1,69 @@
+.SelectCountDown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timerCountDown {
+  padding-top: 60px;
+  margin-top: 80px;
+  width: 256px;
+  height: 227px;
+  background: url("../../img/countdown.svg");
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.timerCountDown h1 {
+  display: inline;
+  font-family: "Share Tech Mono", monospace;
+  color: #ffffff;
+  font-size: 56px;
+  font-weight: 400;
+}
+.timerCountDown p {
+  display: inline;
+  font-family: "Share Tech Mono", monospace;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.inputTime {
+  display: flex;
+  justify-content: space-between;
+  width: 66%;
+  margin-bottom: 30px;
+}
+
+.inputTime input {
+  display: inline;
+  width: 30px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  padding: 18px;
+  margin: 5px;
+  background-color: #e1e2e6;
+  font-size: 24px;
+}
+
+.SelectCountDown div:last-child {
+  width: 72%;
+  display: flex;
+  justify-content: space-between;
+}
+.SelectCountDown div:last-child button {
+  font-size: 20px;
+}
+
+.btnfix {
+  text-align: center;
+  width: 120px;
+}

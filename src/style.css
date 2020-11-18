@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+button {
+  background-color: #a8adc6;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: "Share Tech Mono", monospace;
+  text-decoration: none;
+  font-size: 24px;
+  border: none;
+  color: white;
+}
+button:hover {
+  background-color: #8289a9;
+  cursor: pointer;
+}
+
+.button {
+  background-color: #a8adc6;
+  padding: 15px;
+  border-radius: 10px;
+  font-family: "Share Tech Mono", monospace;
+  text-decoration: none;
+  font-size: 24px;
+  border: none;
+  color: white;
+}
+.button:hover {
+  background-color: #8289a9;
+  cursor: pointer;
+}
+
+.appScreen {
+  width: 360px;
+  height: 640px;
+  background: #ffffff;
+  box-shadow: 3px 3px 10px #00000010;
+  border-radius: 15px;
+  position: relative;
+}
+
+.monitor::after {
+  margin-top: 15px;
+  content: "Created by Dan, Hercules & Luiz";
+  font-family: "Share Tech Mono", monospace;
+  color: #8289a9;
+  font-weight: 800;
+}
+.monitor {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #edeef0;
+}
+
+.voltar {
+  position: absolute;
+  right: 0;
+  background: #a8adc6;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 0 5px 0 5px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.voltar:hover {
+  background: #8289a9;
+}

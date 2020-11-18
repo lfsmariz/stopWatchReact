@@ -1,0 +1,13 @@
+.SelectPage_menu {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SelectPage_menu div {
+  margin-top: 50px;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
